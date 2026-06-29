@@ -3,10 +3,7 @@ import os
 import win32gui
 import win32con
 
-
-def open_path(path):
-    print(f"Open :{path}")
-    os.startfile(path)
+from buttons import Button
 
 
 root = tk.CTk()
@@ -20,45 +17,42 @@ root.geometry(f"{screen_width}x{screen_height}+0+0")
 root.attributes("-toolwindow", True)
 
 #基本ボタンの配置
-browser = tk.CTkButton(root,
-                       text = "CHROME",
-                       command = lambda: open_path("C:/Program Files/Google/Chrome/Application/chrome.exe"))
-browser.pack(pady=10)
+browser_btn = Button(root,
+                     "CHROME",
+                     "C:/Program Files/Google/Chrome/Application/chrome.exe")
 
-assignment = tk.CTkButton(root,
-                          text = "Assignment",
-                          command = lambda: open_path("C:/Users/kazuk/Documents/Assignment"))
-assignment.pack(pady = 10)
+assignment_btn = Button(root,
+                        "Assignment",
+                        "C:/Users/kazuk/Documents/Assignment")
 
-develop = tk.CTkButton(root,
-                    text = "Develop",
-                    command = lambda: open_path("C:/Users/kazuk/Develop"))
-develop.pack(pady = 10)
+develop_btn = Button(root,
+                     "Develop",
+                     "C:/Users/kazuk/Develop")
 
-create = tk.CTkButton(root,
-                    text = "Create",
-                    command = lambda: open_path("C:/Users/kazuk/Create"))
-create.pack(pady = 10)
+create_btn = Button(root,
+                    "Create",
+                    "C:/Users/kazuk/Create")
 
-game = tk.CTkButton(root,
-                    text = "Game",
-                    command = lambda: open_path("C:/Users/kazuk/Game"))
-game.pack(pady = 10)
+game_btn = Button(root,
+                  "Game",
+                  "C:/Users/kazuk/Game")
 
-trash = tk.CTkButton(root,
-                     text = "Trash",
-                     command = lambda: open_path("shell:RecycleBinFolder"))
-trash.pack(pady=10)
+trash_btn = Button(root,
+                   "Trash",
+                   "shell:RecycleBinFolder")
 
-setting = tk.CTkButton(root,
-                       text = "Setting",
-                       command = lambda: open_path("ms-settings:"))
-setting.pack(pady=10)
+setting_btn = Button(root,
+                     "Setting",
+                     "ms-settings:")
 
-exit = tk.CTkButton(root,
-                    text = "EXIT",
-                    command = root.destroy)
-exit.pack(pady=10)
+
+#============キルスイッチ====================
+exit_btn = tk.CTkButton(root,
+                        text = "EXIT",
+                        command = root.destroy)
+exit_btn.pack(pady=10)
+#===========================================
+
 
 root.update()
 #前面に出てこないように設定
