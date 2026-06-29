@@ -31,13 +31,13 @@ develop_btn = Button(root,
                      "Develop",
                      "C:/Users/kazuk/Develop")
 
-create_btn = Button(root,
-                    "Create",
-                    "C:/Users/kazuk/Create")
+create_btn = FolderOpenButton(root,
+                              "Create",
+                              "C:/Users/kazuk/Create")
 
-game_btn = Button(root,
-                  "Game",
-                  "C:/Users/kazuk/Game")
+game_btn = FolderOpenButton(root,
+                            "Game",
+                            "C:/Users/kazuk/Game")
 
 trash_btn = Button(root,
                    "Trash",
