@@ -2,10 +2,10 @@ import customtkinter as tk
 from pathlib import Path
 
 class GoldPopup:
-    def __init__(self, root, path):
+    def __init__(self, root, path, open_mode="default"):
         self.root = root
         self.path = path
-        
+        self.open_mode = open_mode
         #サブウィンドウを生成
         self.window = tk.CTkToplevel()
         self.window.overrideredirect(True)
@@ -64,6 +64,11 @@ class GoldPopup:
     
     def open_target(self, target_path):
         import os
-        os.startfile(target_path)
+        import subprocess
+
+        if self.open_mode == "vscode":
+            subprocess.Popen(f'code "{target_path}"', shell=True)
+        else:
+            os.startfile(target_path)
         self.window.destroy()
         self.root.unbind("<Button-1>", self.bind_id)

@@ -32,3 +32,16 @@ class FolderOpenButton(Button):
         self.popup = GoldPopup(self.root, self.path)
         
         print("window")
+
+class DevelopOpenButton(Button):
+    def __init__(self, root, text, path):
+        super().__init__(root, text, path)
+        self.popup = None
+    
+    def action(self):
+        if self.popup is not None and self.popup.exists():
+            print("opening")
+            return
+
+        self.popup = GoldPopup(self.root, self.path, open_mode="vscode")        
+        print("window")

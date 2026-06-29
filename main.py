@@ -3,7 +3,7 @@ import os
 import win32gui
 import win32con
 
-from buttons import Button, FolderOpenButton
+from buttons import Button, FolderOpenButton, DevelopOpenButton
 
 
 #ランチャーの初期化
@@ -27,9 +27,9 @@ assignment_btn = FolderOpenButton(root,
                                   "Assignment",
                                   "C:/Users/kazuk/Documents/Assignment")
 
-develop_btn = Button(root,
-                     "Develop",
-                     "C:/Users/kazuk/Develop")
+develop_btn = DevelopOpenButton(root,
+                                "Develop",
+                                "C:/Users/kazuk/Develop")
 
 create_btn = FolderOpenButton(root,
                               "Create",
