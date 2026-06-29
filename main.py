@@ -4,57 +4,21 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
+from widgets import ClockWidget
 
 
-#ランチャーの初期化
+
+#===========ランチャーの初期化====================
 root = tk.CTk()
 root.title("window")
 root.overrideredirect(True)
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}+0+0")
-#アプリとして認識されない設定
+
+#アプリとして認識されないように設定
 root.attributes("-toolwindow", True)
 root.update()
-
-
-#基本ボタンの配置
-browser_btn = Button(root,
-                     "CHROME",
-                     "C:/Program Files/Google/Chrome/Application/chrome.exe")
-
-assignment_btn = FolderOpenButton(root,
-                                  "Assignment",
-                                  "C:/Users/kazuk/Documents/Assignment")
-
-develop_btn = DevelopOpenButton(root,
-                                "Develop",
-                                "C:/Users/kazuk/Develop")
-
-create_btn = FolderOpenButton(root,
-                              "Create",
-                              "C:/Users/kazuk/Create")
-
-game_btn = FolderOpenButton(root,
-                            "Game",
-                            "C:/Users/kazuk/Game")
-
-trash_btn = Button(root,
-                   "Trash",
-                   "shell:RecycleBinFolder")
-
-setting_btn = Button(root,
-                     "Setting",
-                     "ms-settings:")
-
-
-#============キルスイッチ====================
-exit_btn = tk.CTkButton(root,
-                        text = "EXIT",
-                        command = root.destroy)
-exit_btn.pack(pady=10)
-#===========================================
-
 
 #前面に出てこないように設定
 hwnd = win32gui.GetParent(root.winfo_id())
@@ -64,6 +28,41 @@ win32gui.SetWindowLong(
     win32con.GWL_EXSTYLE,
     current_style | win32con.WS_EX_NOACTIVATE
 )
+
+#=============ウィジェットの配置==================
+clock = ClockWidget(root)
+clock.pack(pady=20)
+
+#==============基本ボタンの配置===================
+browser_btn = Button(root,
+                     "CHROME",
+                     "C:/Program Files/Google/Chrome/Application/chrome.exe")
+assignment_btn = FolderOpenButton(root,
+                                  "Assignment",
+                                  "C:/Users/kazuk/Documents/Assignment")
+develop_btn = DevelopOpenButton(root,
+                                "Develop",
+                                "C:/Users/kazuk/Develop")
+create_btn = FolderOpenButton(root,
+                              "Create",
+                              "C:/Users/kazuk/Create")
+game_btn = FolderOpenButton(root,
+                            "Game",
+                            "C:/Users/kazuk/Game")
+trash_btn = Button(root,
+                   "Trash",
+                   "shell:RecycleBinFolder")
+setting_btn = Button(root,
+                     "Setting",
+                     "ms-settings:")
+#=================キルスイッチ====================
+exit_btn = tk.CTkButton(root,
+                        text = "EXIT",
+                        command = root.destroy)
+exit_btn.pack(pady=10)
+#================================================
+
+
 
 
 root.mainloop()
