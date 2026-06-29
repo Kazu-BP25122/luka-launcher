@@ -3,11 +3,11 @@ import os
 import win32gui
 import win32con
 
-from buttons import Button
+from buttons import Button, FolderOpenButton
 
 
+#ランチャーの初期化
 root = tk.CTk()
-
 root.title("window")
 root.overrideredirect(True)
 screen_width = root.winfo_screenwidth()
@@ -15,15 +15,17 @@ screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}+0+0")
 #アプリとして認識されない設定
 root.attributes("-toolwindow", True)
+root.update()
+
 
 #基本ボタンの配置
 browser_btn = Button(root,
                      "CHROME",
                      "C:/Program Files/Google/Chrome/Application/chrome.exe")
 
-assignment_btn = Button(root,
-                        "Assignment",
-                        "C:/Users/kazuk/Documents/Assignment")
+assignment_btn = FolderOpenButton(root,
+                                  "Assignment",
+                                  "C:/Users/kazuk/Documents/Assignment")
 
 develop_btn = Button(root,
                      "Develop",
@@ -54,7 +56,6 @@ exit_btn.pack(pady=10)
 #===========================================
 
 
-root.update()
 #前面に出てこないように設定
 hwnd = win32gui.GetParent(root.winfo_id())
 current_style = win32gui.GetWindowLong(hwnd, win32con.GWL_EXSTYLE)
