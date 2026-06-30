@@ -4,7 +4,7 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
-from widgets import ClockWidget
+from widgets import ClockWidget, CPUWidget, RAMWidget
 
 
 
@@ -15,7 +15,6 @@ root.overrideredirect(True)
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}+0+0")
-
 #アプリとして認識されないように設定
 root.attributes("-toolwindow", True)
 root.update()
@@ -33,6 +32,11 @@ win32gui.SetWindowLong(
 clock = ClockWidget(root)
 clock.pack(pady=20)
 
+cpu = CPUWidget(root)
+cpu.pack(pady=20)
+
+ram = RAMWidget(root)
+ram.pack(pady=20)
 #==============基本ボタンの配置===================
 browser_btn = Button(root,
                      "CHROME",
@@ -64,5 +68,5 @@ exit_btn.pack(pady=10)
 
 
 
-
+root.state('zoomed')
 root.mainloop()

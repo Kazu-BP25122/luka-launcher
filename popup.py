@@ -59,12 +59,17 @@ class GoldPopup:
         if not (wx <= mx <= wx + ww and wy <= my <= wy + wh):
             print("destroy")
             self.window.destroy()
-
+            
             self.root.unbind("<Button-1>", self.bind_id)
     
     def open_target(self, target_path):
         import os
         import subprocess
+        if target_path.is_dir():
+            self.window.destroy()
+            self.root.unbind("<Button-1>", self.bind_id)
+            GoldPopup(self.root, str(target_path), open_mode=self.open_mode)
+            return
 
         if self.open_mode == "vscode":
             subprocess.Popen(f'code "{target_path}"', shell=True)
