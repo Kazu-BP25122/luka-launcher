@@ -1,12 +1,10 @@
 import customtkinter as tk
-import os
 import win32gui
 import win32con
 
-from buttons import Button, FolderOpenButton, DevelopOpenButton
 from widgets.manager import WidgetManager
-
-
+from shortcuts import ShortcutButtons
+from components import Logger
 
 #===========ランチャーの初期化====================
 root = tk.CTk()
@@ -30,35 +28,10 @@ win32gui.SetWindowLong(
 
 #=============ウィジェットの配置==================
 widgets = WidgetManager(root)
+
+logger = Logger(log_widget=widgets.log)
 #==============基本ボタンの配置===================
-browser_btn = Button(root,
-                     "CHROME",
-                     "C:/Program Files/Google/Chrome/Application/chrome.exe",
-                     widgets.log)
-assignment_btn = FolderOpenButton(root,
-                                  "Assignment",
-                                  "C:/Users/kazuk/Documents/Assignment",
-                                  widgets.log)
-develop_btn = DevelopOpenButton(root,
-                                "Develop",
-                                "C:/Users/kazuk/Develop",
-                                widgets.log)
-create_btn = FolderOpenButton(root,
-                              "Create",
-                              "C:/Users/kazuk/Create",
-                              widgets.log)
-game_btn = FolderOpenButton(root,
-                            "Game",
-                            "C:/Users/kazuk/Game",
-                            widgets.log)
-trash_btn = Button(root,
-                   "Trash",
-                   "shell:RecycleBinFolder",
-                   widgets.log)
-setting_btn = Button(root,
-                     "Setting",
-                     "ms-settings:",
-                     widgets.log)
+shortcuts = ShortcutButtons(root, logger)
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,
                         text = "EXIT",
