@@ -4,7 +4,7 @@ import win32con
 
 from widgets.manager import WidgetManager
 from shortcuts import ShortcutButtons
-from components import Logger
+from widgets.components import Logger
 
 #===========ランチャーの初期化====================
 root = tk.CTk()

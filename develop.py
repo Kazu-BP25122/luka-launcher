@@ -1,6 +1,6 @@
 import subprocess
-from components import SubWindow
-from components import FileScrollFrame
+from widgets.components import SubWindow
+from widgets.components import FileScrollFrame
 
 
 class DevelopWindow:
