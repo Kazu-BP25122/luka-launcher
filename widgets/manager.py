@@ -27,6 +27,9 @@ class WidgetManager:
         self.browser_button = DirectButton(master, text="CHROME", path="C:/Program Files/Google/Chrome/Application/chrome.exe", logger=self.logger)
         self.browser_button.pack(pady=5)
 
+        self.develop_button = DevelopButton(master,text="Develop", path="C:/Users/kazuk/Develop", logger=self.logger)
+        self.develop_button.pack(pady=5)
+
         self.update_widgets()
 
 

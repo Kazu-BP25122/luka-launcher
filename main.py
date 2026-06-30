@@ -34,7 +34,7 @@ logger = Logger(log_widget=log)
 widgets = WidgetManager(root, logger=logger, log_widget=log)
 
 #==============基本ボタンの配置===================
-shortcuts = ShortcutButtons(root, logger)
+#shortcuts = ShortcutButtons(root, logger)
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,
                         text = "EXIT",
