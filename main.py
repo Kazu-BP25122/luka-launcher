@@ -4,7 +4,7 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
-from widgets import *
+from widgets.manager import WidgetManager
 
 
 
@@ -29,52 +29,36 @@ win32gui.SetWindowLong(
 )
 
 #=============ウィジェットの配置==================
-clock = ClockWidget(root)
-clock.pack(pady=10)
-
-battery = BatteryWidget(root)
-battery.pack(pady=10)
-
-cpu = CPUWidget(root)
-cpu.pack(pady=10)
-
-ram = RAMWidget(root)
-ram.pack(pady=10)
-
-log = LogWidget(root)
-log.pack(pady=10)
-
-bitrate = BitrateWidget(root)
-bitrate.pack(pady=10)
+widgets = WidgetManager(root)
 #==============基本ボタンの配置===================
 browser_btn = Button(root,
                      "CHROME",
                      "C:/Program Files/Google/Chrome/Application/chrome.exe",
-                     log)
+                     widgets.log)
 assignment_btn = FolderOpenButton(root,
                                   "Assignment",
                                   "C:/Users/kazuk/Documents/Assignment",
-                                  log)
+                                  widgets.log)
 develop_btn = DevelopOpenButton(root,
                                 "Develop",
                                 "C:/Users/kazuk/Develop",
-                                log)
+                                widgets.log)
 create_btn = FolderOpenButton(root,
                               "Create",
                               "C:/Users/kazuk/Create",
-                              log)
+                              widgets.log)
 game_btn = FolderOpenButton(root,
                             "Game",
                             "C:/Users/kazuk/Game",
-                            log)
+                            widgets.log)
 trash_btn = Button(root,
                    "Trash",
                    "shell:RecycleBinFolder",
-                   log)
+                   widgets.log)
 setting_btn = Button(root,
                      "Setting",
                      "ms-settings:",
-                     log)
+                     widgets.log)
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,
                         text = "EXIT",

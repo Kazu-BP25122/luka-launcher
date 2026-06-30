@@ -19,4 +19,3 @@ class ClockWidget(tk.CTkFrame):
         current_date = time.strftime("%Y/%m/%d")
         self.date_label.configure(text=current_date)
         self.clock_label.configure(text=current_time)
-        self.after(1000, self.update_clock)

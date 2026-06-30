@@ -14,5 +14,3 @@ class CPUWidget(tk.CTkFrame):
     def update_cpu(self):
         current_cpu_percent = psutil.cpu_percent(interval=None)
         self.cpu_percent_label.configure(text=f"CPU:{current_cpu_percent}%")
-
-        self.after(1000, self.update_cpu)

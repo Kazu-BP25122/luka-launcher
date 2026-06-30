@@ -14,5 +14,3 @@ class RAMWidget(tk.CTkFrame):
     def update_ram(self):
         current_ram_percent = psutil.virtual_memory().percent
         self.ram_percent_label.configure(text=f"RAM:{current_ram_percent}%")
-
-        self.after(1000, self.update_ram)

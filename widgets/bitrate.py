@@ -27,4 +27,3 @@ class BitrateWidget(tk.CTkFrame):
 
         self.download_speed_label.configure(text=f"download : {download_speed} [KBit/s]")
         self.upload_speed_label.configure(text=f"upload : {upload_speed} [KBit/s]")
-        self.after(1000, self.update_Bitrate)

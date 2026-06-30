@@ -13,4 +13,3 @@ class BatteryWidget(tk.CTkFrame):
     def update_battery(self):
         battery_percent = psutil.sensors_battery().percent
         self.battery_percent_label.configure(text=f"Battery : {battery_percent}%")
-        self.after(1000, self.update_battery)
