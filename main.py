@@ -3,7 +3,6 @@ import win32gui
 import win32con
 
 from widgets.manager import WidgetManager
-from shortcuts import ShortcutButtons
 from widgets import LogWidget
 from widgets.components import Logger
 
@@ -30,19 +29,14 @@ win32gui.SetWindowLong(
 #=============ウィジェットの配置==================
 log = LogWidget(root)
 logger = Logger(log_widget=log)
-
 widgets = WidgetManager(root, logger=logger, log_widget=log)
 
-#==============基本ボタンの配置===================
-#shortcuts = ShortcutButtons(root, logger)
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,
                         text = "EXIT",
                         command = root.destroy)
-exit_btn.pack(pady=10)
+exit_btn.pack(pady=5)
 #================================================
-
-
 
 root.state('zoomed')
 root.mainloop()

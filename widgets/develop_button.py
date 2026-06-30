@@ -31,8 +31,8 @@ class DevelopButton(tk.CTkFrame):
     def vscode_action(self, target_path):
         try:
             subprocess.Popen(["code", str(target_path)], shell=True)
-            self.logger.log_info(f"[OPEN] {target_path.name}")
+            self.logger.log_info(f"[OPEN] {target_path.name}\n")
         except Exception as e:
-            self.logger.log_info(f"[ERROR] {target_path.name}")
+            self.logger.log_info(f"[ERROR] {target_path.name}\n")
             
         self.sub_win.window.destroy()

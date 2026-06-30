@@ -30,6 +30,21 @@ class WidgetManager:
         self.develop_button = DevelopButton(master,text="Develop", path="C:/Users/kazuk/Develop", logger=self.logger)
         self.develop_button.pack(pady=5)
 
+        self.assignment_button = FolderButton(master,text="Assignment", path="C:/Users/kazuk/Documents/Assignment", logger=self.logger)
+        self.assignment_button.pack(pady=5)
+
+        self.create_button = FolderButton(master,text="Create", path="C:/Users/kazuk/Create", logger=self.logger)
+        self.create_button.pack(pady=5)
+
+        self.game_button = FolderButton(master,text="Game", path="C:/Users/kazuk/Game", logger=self.logger)
+        self.game_button.pack(pady=5)
+
+        self.trash_button = DirectButton(master, text="trash", path="shell:RecycleBinFolder", logger=self.logger)
+        self.trash_button.pack(pady=5)
+
+        self.setting_button = DirectButton(master, text="setting", path="ms-settings:", logger=self.logger)
+        self.setting_button.pack(pady=5)
+
         self.update_widgets()
 
 

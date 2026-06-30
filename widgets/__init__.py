@@ -6,3 +6,4 @@ from .bitrate import BitrateWidget
 from .battery import BatteryWidget
 from .direct_button import DirectButton
 from .develop_button import DevelopButton
+from .foldr_button import FolderButton

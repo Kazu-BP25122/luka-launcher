@@ -10,6 +10,6 @@ class LogWidget(tk.CTkFrame):
 
     def add_log(self, message):
         self.log_box.configure(state="normal")
-        self.log_box.insert("end", f"{message}\n")
+        self.log_box.insert("end", f"{message}")
         self.log_box.see("end")
         self.log_box.configure(state="disabled")
