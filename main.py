@@ -4,7 +4,7 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
-from widgets import ClockWidget, CPUWidget, RAMWidget
+from widgets import ClockWidget, CPUWidget, RAMWidget, LogWidget
 
 
 
@@ -37,28 +37,38 @@ cpu.pack(pady=20)
 
 ram = RAMWidget(root)
 ram.pack(pady=20)
+
+log = LogWidget(root)
+log.pack(pady=10)
 #==============基本ボタンの配置===================
 browser_btn = Button(root,
                      "CHROME",
-                     "C:/Program Files/Google/Chrome/Application/chrome.exe")
+                     "C:/Program Files/Google/Chrome/Application/chrome.exe",
+                     log)
 assignment_btn = FolderOpenButton(root,
                                   "Assignment",
-                                  "C:/Users/kazuk/Documents/Assignment")
+                                  "C:/Users/kazuk/Documents/Assignment",
+                                  log)
 develop_btn = DevelopOpenButton(root,
                                 "Develop",
-                                "C:/Users/kazuk/Develop")
+                                "C:/Users/kazuk/Develop",
+                                log)
 create_btn = FolderOpenButton(root,
                               "Create",
-                              "C:/Users/kazuk/Create")
+                              "C:/Users/kazuk/Create",
+                              log)
 game_btn = FolderOpenButton(root,
                             "Game",
-                            "C:/Users/kazuk/Game")
+                            "C:/Users/kazuk/Game",
+                            log)
 trash_btn = Button(root,
                    "Trash",
-                   "shell:RecycleBinFolder")
+                   "shell:RecycleBinFolder",
+                   log)
 setting_btn = Button(root,
                      "Setting",
-                     "ms-settings:")
+                     "ms-settings:",
+                     log)
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,
                         text = "EXIT",
