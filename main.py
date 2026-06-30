@@ -4,6 +4,7 @@ import win32con
 
 from widgets.manager import WidgetManager
 from shortcuts import ShortcutButtons
+from widgets import LogWidget
 from widgets.components import Logger
 
 #===========ランチャーの初期化====================
@@ -27,9 +28,11 @@ win32gui.SetWindowLong(
 )
 
 #=============ウィジェットの配置==================
-widgets = WidgetManager(root)
+log = LogWidget(root)
+logger = Logger(log_widget=log)
 
-logger = Logger(log_widget=widgets.log)
+widgets = WidgetManager(root, logger=logger, log_widget=log)
+
 #==============基本ボタンの配置===================
 shortcuts = ShortcutButtons(root, logger)
 #=================キルスイッチ====================

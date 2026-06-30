@@ -2,8 +2,10 @@ from widgets import *
 
 
 class WidgetManager:
-    def __init__(self, master):
+    def __init__(self, master, logger, log_widget):
         self.master = master
+        self.logger = logger
+        self.log = log_widget
 
         self.clock = ClockWidget(master)
         self.clock.pack(pady=10)
@@ -17,11 +19,13 @@ class WidgetManager:
         self.ram = RAMWidget(master)
         self.ram.pack(pady=10)
 
-        self.log = LogWidget(master)
         self.log.pack(pady=10)
 
         self.bitrate = BitrateWidget(master)
         self.bitrate.pack(pady=10)
+
+        self.browser_button = DirectButton(master, text="CHROME", path="C:/Program Files/Google/Chrome/Application/chrome.exe", logger=self.logger)
+        self.browser_button.pack(pady=5)
 
         self.update_widgets()
 
