@@ -4,7 +4,7 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
-from widgets import ClockWidget, CPUWidget, RAMWidget, LogWidget, BitrateWidget, BatteryWidget
+from widgets import *
 
 
 
