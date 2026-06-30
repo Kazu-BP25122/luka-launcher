@@ -4,7 +4,7 @@ import win32gui
 import win32con
 
 from buttons import Button, FolderOpenButton, DevelopOpenButton
-from widgets import ClockWidget, CPUWidget, RAMWidget, LogWidget
+from widgets import ClockWidget, CPUWidget, RAMWidget, LogWidget, BitrateWidget, BatteryWidget
 
 
 
@@ -30,16 +30,22 @@ win32gui.SetWindowLong(
 
 #=============ウィジェットの配置==================
 clock = ClockWidget(root)
-clock.pack(pady=20)
+clock.pack(pady=10)
+
+battery = BatteryWidget(root)
+battery.pack(pady=10)
 
 cpu = CPUWidget(root)
-cpu.pack(pady=20)
+cpu.pack(pady=10)
 
 ram = RAMWidget(root)
-ram.pack(pady=20)
+ram.pack(pady=10)
 
 log = LogWidget(root)
 log.pack(pady=10)
+
+bitrate = BitrateWidget(root)
+bitrate.pack(pady=10)
 #==============基本ボタンの配置===================
 browser_btn = Button(root,
                      "CHROME",
