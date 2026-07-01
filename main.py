@@ -3,7 +3,7 @@ import win32gui
 import win32con
 import json
 
-from widgets.manager import WidgetManager
+from manager import WidgetManager
 from widgets import LogWidget
 from widgets.components import Logger
 
@@ -31,12 +31,12 @@ win32gui.SetWindowLong(
 with open("config.json", "r", encoding="utf-8") as f:
     config = json.load(f)
 
-print(config["clock"]["font_size"])
+#print(config["clock"]["font_size"])
 
 #=============ウィジェットの配置==================
 log = LogWidget(root)
 logger = Logger(log_widget=log)
-widgets = WidgetManager(root, logger=logger, log_widget=log)
+widgets = WidgetManager(root, json_data=config, logger=logger, log_widget=log)
 
 #=================キルスイッチ====================
 exit_btn = tk.CTkButton(root,

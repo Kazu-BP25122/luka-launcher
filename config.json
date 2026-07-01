@@ -1,6 +1,12 @@
 {
-    "clock":{
-        "font_size": 40,
-        "text_color": "gold"
-    }
+    "widgets":[
+        {
+            "type": "clock",
+            "layout": {"row": 0, "col": 0, "W": 4, "H": 2},
+            "props": {
+                "show_seconds": 1,
+                "text_color": "#FFCC00"
+            }
+        }
+    ]
 }

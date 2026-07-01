@@ -1,4 +1,4 @@
-from .clock.clock import ClockWidget
+from .clock.logic import ClockWidget
 from .cpu import CPUWidget
 from .ram import RAMWidget
 from .log import LogWidget
