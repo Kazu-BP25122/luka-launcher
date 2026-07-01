@@ -15,14 +15,17 @@ class WidgetManager:
         self.clock = ClockWidget(master)
         self.pos_manager.place_at(self.clock.get_widget(), 0, 0, 4, 2)
 
+        self.picture = PictureWidget(master, "C:/Users/kazuk/Pictures/LUKA/1761390_11.jpg")
+        self.pos_manager.place_at(self.picture.get_widget(), 5, 5, 4, 6)
+
         self.battery = BatteryWidget(master)
-        self.pos_manager.place_at(self.battery, 18, 22, 2, 1)
+        self.pos_manager.place_at(self.battery, 18, 21, 3, 1)
 
         #self.excange = ExchangeWidget(master, logger=logger)
         #self.excange.pack(pady=10)
 
         self.wifi = WifiWidget(master)
-        self.pos_manager.place_at(self.wifi, 16, 22, 2, 2)
+        self.pos_manager.place_at(self.wifi, 16, 21, 3, 2)
         
         self.cpu = CPUWidget(master)
         self.pos_manager.place_at(self.cpu, 5, 0, 4, 1)
