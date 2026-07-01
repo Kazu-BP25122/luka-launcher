@@ -13,6 +13,9 @@ class WidgetManager:
         self.battery = BatteryWidget(master)
         self.battery.pack(pady=10)
 
+        #self.excange = ExchangeWidget(master, logger=logger)
+        #self.excange.pack(pady=10)
+        
         self.cpu = CPUWidget(master)
         self.cpu.pack(pady=10)
 
