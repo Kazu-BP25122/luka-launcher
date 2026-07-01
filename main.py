@@ -1,6 +1,7 @@
 import customtkinter as tk
 import win32gui
 import win32con
+import json
 
 from widgets.manager import WidgetManager
 from widgets import LogWidget
@@ -25,6 +26,12 @@ win32gui.SetWindowLong(
     win32con.GWL_EXSTYLE,
     current_style | win32con.WS_EX_NOACTIVATE
 )
+
+#===============jsonの読み込み===================
+with open("config.json", "r", encoding="utf-8") as f:
+    config = json.load(f)
+
+print(config["clock"]["font_size"])
 
 #=============ウィジェットの配置==================
 log = LogWidget(root)
