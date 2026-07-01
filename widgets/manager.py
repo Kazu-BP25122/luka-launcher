@@ -22,39 +22,41 @@ class WidgetManager:
         #self.excange.pack(pady=10)
 
         self.wifi = WifiWidget(master)
-        self.pos_manager.place_at(self.wifi, 7, 10, 2, 1)
+        self.pos_manager.place_at(self.wifi, 16, 22, 2, 2)
         
         self.cpu = CPUWidget(master)
-        self.pos_manager.place_at(self.cpu, 5, 0, 2, 1)
+        self.pos_manager.place_at(self.cpu, 5, 0, 4, 1)
 
         self.ram = RAMWidget(master)
-        self.pos_manager.place_at(self.ram, 6, 0, 2, 1)
+        self.pos_manager.place_at(self.ram, 6, 0, 4, 1)
 
-        self.pos_manager.place_at(self.log, 3, 4, 3, 3)
+
+        self.pos_manager.place_at(self.log, 0, 18, 6, 4)
+
 
         self.bitrate = BitrateWidget(master)
-        self.pos_manager.place_at(self.bitrate, 7, 0, 3, 1)
+        self.pos_manager.place_at(self.bitrate, 7, 0, 4, 1)
 
         self.browser_button = DirectButton(master, text="CHROME", path="C:/Program Files/Google/Chrome/Application/chrome.exe", logger=self.logger)
-        self.pos_manager.place_at(self.browser_button, 10, 11, 2, 1)
+        self.pos_manager.place_at(self.browser_button, 10, 11, 1, 1)
 
         self.develop_button = DevelopButton(master,text="Develop", path="C:/Users/kazuk/Develop", logger=self.logger)
-        self.develop_button.pack(pady=5)
+        self.pos_manager.place_at(self.develop_button, 10, 12, 1, 1)
 
         self.assignment_button = FolderButton(master,text="Assignment", path="C:/Users/kazuk/Documents/Assignment", logger=self.logger)
-        self.assignment_button.pack(pady=5)
+        self.pos_manager.place_at(self.assignment_button, 10, 13, 2, 1)
 
         self.create_button = FolderButton(master,text="Create", path="C:/Users/kazuk/Create", logger=self.logger)
-        self.create_button.pack(pady=5)
+        self.pos_manager.place_at(self.create_button, 11, 11, 1, 1)
 
         self.game_button = FolderButton(master,text="Game", path="C:/Users/kazuk/Game", logger=self.logger)
-        self.game_button.pack(pady=5)
+        self.pos_manager.place_at(self.game_button, 11, 12, 1, 1)
 
         self.trash_button = DirectButton(master, text="trash", path="shell:RecycleBinFolder", logger=self.logger)
-        self.trash_button.pack(pady=5)
+        self.pos_manager.place_at(self.trash_button, 11, 13, 1, 1)
 
         self.setting_button = DirectButton(master, text="setting", path="ms-settings:", logger=self.logger)
-        self.setting_button.pack(pady=5)
+        self.pos_manager.place_at(self.setting_button, 11, 14, 1, 1)
 
         self.update_widgets()
 
