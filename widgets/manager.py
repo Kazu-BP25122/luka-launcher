@@ -15,6 +15,9 @@ class WidgetManager:
 
         #self.excange = ExchangeWidget(master, logger=logger)
         #self.excange.pack(pady=10)
+
+        self.wifi = WifiWidget(master)
+        self.wifi.pack(pady=10)
         
         self.cpu = CPUWidget(master)
         self.cpu.pack(pady=10)
@@ -57,5 +60,6 @@ class WidgetManager:
         self.cpu.update_cpu()
         self.ram.update_ram()
         self.bitrate.update_Bitrate()
+        self.wifi.update_wifi()
         
         self.master.after(1000, self.update_widgets)
