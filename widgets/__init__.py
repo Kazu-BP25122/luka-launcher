@@ -9,4 +9,4 @@ from .develop_button import DevelopButton
 from .foldr_button import FolderButton
 from .exchange import ExchangeWidget
 from .wifi import WifiWidget
-from picture.picture import PictureWidget
+#from picture.picture import PictureWidget

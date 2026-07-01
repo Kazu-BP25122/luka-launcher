@@ -15,8 +15,8 @@ class WidgetManager:
         self.clock = ClockWidget(master)
         self.pos_manager.place_at(self.clock.get_widget(), 0, 0, 4, 2)
 
-        self.picture = PictureWidget(master, "C:/Users/kazuk/Pictures/LUKA/1761390_11.jpg")
-        self.pos_manager.place_at(self.picture.get_widget(), 5, 5, 4, 6)
+        #self.picture = PictureWidget(master, "C:/Users/kazuk/Pictures/LUKA/1761390_11.jpg")
+        #self.pos_manager.place_at(self.picture.get_widget(), 5, 5, 4, 6)
 
         self.battery = BatteryWidget(master)
         self.pos_manager.place_at(self.battery, 18, 21, 3, 1)
