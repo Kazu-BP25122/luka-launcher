@@ -13,7 +13,7 @@ class WidgetManager:
         #行:0~19, 列:0~23
 
         self.clock = ClockWidget(master)
-        self.pos_manager.place_at(self.clock, 0, 0, 4, 2)
+        self.pos_manager.place_at(self.clock.get_widget(), 0, 0, 4, 2)
 
         self.battery = BatteryWidget(master)
         self.pos_manager.place_at(self.battery, 18, 22, 2, 1)

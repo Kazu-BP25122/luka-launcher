@@ -1,23 +1,18 @@
-import customtkinter as tk
 import time
+from .design import ClockDesign
 
 
-class ClockWidget(tk.CTkFrame):
-    def __init__(self, master, **kwargs):
-        super().__init__(master, fg_color="transparent", **kwargs)
-
-        self.date_label = tk.CTkLabel(self, text="", font=("Helvetica", 16), text_color="gray")
-        self.date_label.pack(pady=(5, 0), fill="both", expand=True)
-
-        self.clock_label = tk.CTkLabel(self, text="", font=("Helvetica", 40, "bold"), text_color="gold")
-        self.clock_label.pack(pady=(0, 5))
-
+class ClockWidget():
+    def __init__(self, master):
+        self.master = master
+        self.clock_design = ClockDesign(master)
         self.update_clock()
 
     def update_clock(self):
-        current_time = time.strftime("%H:%M:%S")
-        current_date = time.strftime("%Y/%m/%d")
-        self.date_label.configure(text=current_date)
-        self.clock_label.configure(text=current_time)
-
-        self.after(500, self.update_clock)
+        self.current_time = time.strftime("%H:%M:%S")
+        self.current_date = time.strftime("%Y/%m/%d")
+        self.clock_design.update_view(self.current_date, self.current_time)
+        self.master.after(500, self.update_clock)
+    
+    def get_widget(self):
+        return self.clock_design
