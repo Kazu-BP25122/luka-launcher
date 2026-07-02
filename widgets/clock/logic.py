@@ -19,9 +19,9 @@ class ClockWidget():
 
         if S != self.last_sec:
             self.frame.update_view(self.current_time)
-        
+
         self.last_sec = S
-        
+
         self.master.after(100, self.update_clock)
 
 

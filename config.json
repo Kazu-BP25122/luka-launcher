@@ -4,8 +4,10 @@
             "type": "clock",
             "layout": {"row": 0, "col": 0, "W": 4, "H": 2},
             "props": {
-                "show_seconds": 1,
-                "text_color": "#FFCC00"
+                "show_seconds": 0,
+                "text_color": "#FFCC00",
+                "text_size": 40,
+                "font":"Helvetica"
             }
         }
     ]

@@ -5,7 +5,7 @@ class ClockFrame(tk.CTkFrame):
     def __init__(self, master, props, **kwargs):
         super().__init__(master, fg_color="transparent", **kwargs)
         self.props = props
-        self.clock_label = tk.CTkLabel(self, text="", font=("Helvetica", 40, "bold"), text_color="gold")
+        self.clock_label = tk.CTkLabel(self, text="", font=(props["font"], props["text_size"], "bold"), text_color=props["text_color"])
         self.clock_label.pack(expand=True)
 
 
